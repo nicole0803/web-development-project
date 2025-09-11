@@ -6,13 +6,13 @@ using Persistence;
 
 namespace API.Controllers;
 
-public class ActivitiesController : BaseAPiController
+public class ActivitiesController( AppDbContext context) : BaseAPiController
 {
-    private readonly AppDbContext context;
-    public ActivitiesController(AppDbContext context)
-    {
-        this.context = context;
-    }
+    // private readonly AppDbContext context;
+    // public ActivitiesController(AppDbContext context)
+    // {
+    //     this.context = context;
+    // }
 
     [HttpGet]
     public async Task<ActionResult<List<Activity>>> GetActivities()
